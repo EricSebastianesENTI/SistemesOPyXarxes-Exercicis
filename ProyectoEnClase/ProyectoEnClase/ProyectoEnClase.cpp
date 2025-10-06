@@ -9,13 +9,24 @@ int main()
 {
 	InputSystem* iS = new InputSystem();
 
-	//InputSystem::KeyBinding* kb = iS->AddListener(K_1, CuandoPresionan1)
-
-	InputSystem::KeyBinding* kb = iS->AddListener(K_2, []()
+	InputSystem::KeyBinding* kb = iS->AddListener(K_1, []()
 		{ 
 		CC::Lock(); 
 		std::cout << "Pressed 1" << std::endl; 
 		CC::Unlock(); 
+		});
+
+	InputSystem::KeyBinding* kb2 = iS->AddListener(K_2, []()
+		{
+			CC::Lock();
+			std::cout << "Pressed 2" << std::endl;
+			CC::Unlock();
+		});
+	InputSystem::KeyBinding* kb3 = iS->AddListener(K_3, []()
+		{
+			CC::Lock();
+			std::cout << "Pressed 3" << std::endl;
+			CC::Unlock();
 		});
 
 
