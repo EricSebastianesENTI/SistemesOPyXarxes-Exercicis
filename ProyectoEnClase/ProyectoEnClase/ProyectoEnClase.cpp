@@ -2,44 +2,64 @@
 #include <functional>
 #include <string>
 #include "utils/ConsoleControler.h"
+#include "utils/Timer.h"
 #include "inputSystem/InputSystem.h"
 
 
 int main()
 {
-	InputSystem* iS = new InputSystem();
+	std::cout << "Start" << std::endl;
+	//Timer::SleepThread(3000);
 
-	InputSystem::KeyBinding* kb = iS->AddListener(K_1, []()
-		{ 
-		CC::Lock(); 
-		std::cout << "Pressed 1" << std::endl; 
-		CC::Unlock(); 
-		});
-
-	InputSystem::KeyBinding* kb2 = iS->AddListener(K_2, []()
-		{
-			CC::Lock();
-			std::cout << "Pressed 2" << std::endl;
-			CC::Unlock();
-		});
-	InputSystem::KeyBinding* kb3 = iS->AddListener(K_3, []()
-		{
-			CC::Lock();
-			std::cout << "Pressed 3" << std::endl;
-			CC::Unlock();
-		});
-
-
-	iS->StartListen();
-
-
-	while (true)
+/*	Timer::StartTimer(3000, []())
 	{
+	CC::Lock();
+	std:.cout << "3 seconds Elapsed" << std::endl;
+	CC::unlock();
+	}	*/
 
-	}
+	std::cout << "End" << std::endl;
 }
+
 /*
-//----------------------------Clase de prueba de funciones lambda-----------------------------
+
+-------------------INPUT SYSTEM TEST-------------------
+
+InputSystem* iS = new InputSystem();
+
+InputSystem::KeyBinding* kb = iS->AddListener(K_1, []()
+	{
+		CC::Lock();
+		std::cout << "Pressed 1" << std::endl;
+		CC::Unlock();
+	});
+
+InputSystem::KeyBinding* kb2 = iS->AddListener(K_2, []()
+	{
+		CC::Lock();
+		std::cout << "Pressed 2" << std::endl;
+		CC::Unlock();
+	});
+InputSystem::KeyBinding* kb3 = iS->AddListener(K_3, []()
+	{
+		CC::Lock();
+		std::cout << "Pressed 3" << std::endl;
+		CC::Unlock();
+	});
+
+
+iS->StartListen();
+
+
+while (true)
+{
+
+}
+
+*/
+
+/*
+//------------------TEST Funciones Lambda---------------------
 	 //Función lambda
 typedef std::function<int(int, int)> SumaFunction;
 
