@@ -24,10 +24,7 @@
     <ClCompile Include="inputSystem\InputSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="utils\Timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="utils\ConsoleControl.cpp">
+    <ClCompile Include="Preguntas\Preguntas.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,10 +41,7 @@
     <ClInclude Include="inputSystem\InputSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="utils\Timer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="utils\ConsoleControl.h">
+    <ClInclude Include="Preguntas\Preguntas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

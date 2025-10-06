@@ -124,18 +124,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="inputSystem\InputSystem.cpp" />
-    <ClCompile Include="utils\ConsoleControl.cpp" />
+    <ClCompile Include="Preguntas\Preguntas.cpp" />
     <ClCompile Include="utils\ConsoleControler.cpp" />
     <ClCompile Include="ProyectoEnClase.cpp" />
-    <ClCompile Include="utils\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="1TutorialThread\Threadtutorial.h" />
     <ClInclude Include="inputSystem\InputSystem.h" />
-    <ClInclude Include="utils\ConsoleControl.h" />
+    <ClInclude Include="Preguntas\Preguntas.h" />
     <ClInclude Include="utils\ConsoleControler.h" />
     <ClInclude Include="inputSystem\InputConst.h" />
-    <ClInclude Include="utils\Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
