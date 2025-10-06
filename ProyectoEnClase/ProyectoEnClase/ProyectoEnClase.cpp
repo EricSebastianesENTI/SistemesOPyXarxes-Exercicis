@@ -18,6 +18,15 @@ int main()
 	CC::unlock();
 	}	*/
 
+	Timer::StartLoopTimer(1000, []()
+	{
+		CC::Lock;
+		std::cout << "1 seconds elapsed" << std::endl;
+		CC::Unlock;
+
+		return true;
+	});
+
 	std::cout << "End" << std::endl;
 }
 
