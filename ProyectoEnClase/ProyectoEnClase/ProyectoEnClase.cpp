@@ -9,7 +9,9 @@ int main()
 {
 	InputSystem* iS = new InputSystem();
 
-	InputSystem::KeyBinding* kb = iS->AddListener(K_1, []()
+	//InputSystem::KeyBinding* kb = iS->AddListener(K_1, CuandoPresionan1)
+
+	InputSystem::KeyBinding* kb = iS->AddListener(K_2, []()
 		{ 
 		CC::Lock(); 
 		std::cout << "Pressed 1" << std::endl; 
