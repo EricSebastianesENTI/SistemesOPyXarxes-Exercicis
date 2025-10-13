@@ -4,7 +4,7 @@
 #include <sstream>
 #include <Windows.h>
 #include<conio.h>
-static class ConsoleControlz
+static class ConsoleControl
 {
 
 private:

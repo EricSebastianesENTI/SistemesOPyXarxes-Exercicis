@@ -190,4 +190,3 @@ void ThreadTester::TestFunction(unsigned long long testInt)
 		ThreadTester* threadTester = new ThreadTester();
 		threadTester->Example07();
 	}
-

@@ -1,99 +1,53 @@
 #include <iostream>
-#include <functional>
 #include <string>
-#include "utils/ConsoleControler.h"
-#include "utils/Timer.h"
-#include "inputSystem/InputSystem.h"
+#include <fstream>
+#include <json/json.h>
 
+#include "utils/ConsoleControler.h"
+
+class Player
+{
+public:
+	int life = 0;
+	std::string name = "Test Player";
+	unsigned int coin = 0;
+
+	Player() {}
+	~Player() {}
+
+	void Decode(Json::Value json)
+	{
+		life = json["life"].asInt();
+		coin = json["coins"].asUInt();
+		name = json["name"].asString();
+	}
+
+	Json::Value Encode()
+	{
+		Json::Value json;
+
+		json["life"] = life;
+		json["name"] = name;
+		json["coin"] = coin; 
+
+		return json;
+	}
+
+};
 
 int main()
 {
-	std::cout << "Start" << std::endl;
-	//Timer::SleepThread(3000);
+	Player* player = new Player();
+	player->coin = 5;
+	player->life = 50;
+	player->name = "Mariano Rajoy";
 
-/*	Timer::StartTimer(3000, []())
-	{
-	CC::Lock();
-	std:.cout << "3 seconds Elapsed" << std::endl;
-	CC::unlock();
-	}	*/
+	Json::Value newJson;
+	newJson["Player"] = player->Encode();
 
-	Timer::StartLoopTimer(1000, []()
-	{
-		CC::Lock;
-		std::cout << "1 seconds elapsed" << std::endl;
-		CC::Unlock;
+	//std::ofstream jsonWriteFile = new std::ofstream("PlayerParseTest.json", std::if)
 
-		return true;
-	});
 
-	std::cout << "End" << std::endl;
+	//CC::SetColor(CC::WHITE, CC::CYAN);
+	//ThreadTutorialTest();
 }
-
-/*
-
--------------------INPUT SYSTEM TEST-------------------
-
-InputSystem* iS = new InputSystem();
-
-InputSystem::KeyBinding* kb = iS->AddListener(K_1, []()
-	{
-		CC::Lock();
-		std::cout << "Pressed 1" << std::endl;
-		CC::Unlock();
-	});
-
-InputSystem::KeyBinding* kb2 = iS->AddListener(K_2, []()
-	{
-		CC::Lock();
-		std::cout << "Pressed 2" << std::endl;
-		CC::Unlock();
-	});
-InputSystem::KeyBinding* kb3 = iS->AddListener(K_3, []()
-	{
-		CC::Lock();
-		std::cout << "Pressed 3" << std::endl;
-		CC::Unlock();
-	});
-
-
-iS->StartListen();
-
-
-while (true)
-{
-
-}
-
-*/
-
-/*
-//------------------TEST Funciones Lambda---------------------
-	 //Función lambda
-typedef std::function<int(int, int)> SumaFunction;
-
-void TestlambdasMolonas(SumaFunction funcionMolona)
-{
-	std::cout << "Voy a ejecutar una funcion que estaba en una variable" << std::endl;
-
-	int number = funcionMolona(5,7);
-
-	std::cout << "ya la he ejecutado jijija" << std::endl;
-}
-
-	int main()
-	{
-	std::string name = "Pepe";
-	//ThreadTutorialTest(); //Ejercicio 1
-	//CC::SetColor(CC::WHITE, CC::CYAN); //Ejercicio 2
-
-	//std::function<int(int, int)> funcionQuehaceCosasPeroEsUnaVariable = [name](int a, int b) {
-
-	SumaFunction funcionQuehaceCosasPeroEsUnaVariable = [name](int a, int b) {
-		std::cout << "Esto no se como pero funciona y dice un nombre --> " << name << std::endl;
-		return a + b;
-	};
-
-	TestlambdasMolonas(funcionQuehaceCosasPeroEsUnaVariable);
-	}
-*/
