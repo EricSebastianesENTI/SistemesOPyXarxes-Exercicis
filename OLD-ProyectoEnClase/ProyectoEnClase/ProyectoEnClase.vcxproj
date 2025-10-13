@@ -123,27 +123,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="3NodeMap\INodeContent.cpp" />
     <ClCompile Include="inputSystem\InputSystem.cpp" />
-    <ClCompile Include="3NodeMap\Node.cpp" />
-    <ClCompile Include="3NodeMap\NodeMap.cpp" />
-    <ClCompile Include="Preguntas\Preguntas.cpp" />
+    <ClCompile Include="utils\ConsoleControl.cpp" />
     <ClCompile Include="utils\ConsoleControler.cpp" />
     <ClCompile Include="ProyectoEnClase.cpp" />
     <ClCompile Include="utils\Timer.cpp" />
-    <ClCompile Include="3NodeMap\Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="1TutorialThread\Threadtutorial.h" />
-    <ClInclude Include="3NodeMap\INodeContent.h" />
     <ClInclude Include="inputSystem\InputSystem.h" />
-    <ClInclude Include="3NodeMap\Node.h" />
-    <ClInclude Include="3NodeMap\NodeMap.h" />
-    <ClInclude Include="Preguntas\Preguntas.h" />
+    <ClInclude Include="utils\ConsoleControl.h" />
     <ClInclude Include="utils\ConsoleControler.h" />
     <ClInclude Include="inputSystem\InputConst.h" />
     <ClInclude Include="utils\Timer.h" />
-    <ClInclude Include="3NodeMap\Vector2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

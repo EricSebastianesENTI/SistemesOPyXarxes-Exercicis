@@ -2,61 +2,38 @@
 #include <functional>
 #include <string>
 #include "utils/ConsoleControler.h"
+#include "utils/Timer.h"
 #include "inputSystem/InputSystem.h"
-#include "Preguntas/Preguntas.h"
-#include "3NodeMap/Node.h"
-#include "3NodeMap/NodeMap.h"
 
-class Tree : INodeContent
-{
-	void Draw(Vector2 offset) override
-	{
-		CC::Lock();
-		CC:ConsoleControl::SetColor(CC::DARKGREY, CC::BLACK);
-		CC::SetPosition(offset.X, offset.Y);
-		std::cout << "T";
-		CC::Unlock();
-	}
-};
 
 int main()
 {
-	NodeMap* myMap = new NodeMap(Vector2(20,20), Vector2(2,2));
+	std::cout << "Start" << std::endl;
+	//Timer::SleepThread(3000);
 
-	Tree* t1 = new Tree();
-	Tree* t2 = new Tree();
-	Tree* t3 = new Tree();
-	Tree* t4 = new Tree();
-	Tree* t5 = new Tree();
-
-	myMap->SafePickNode(Vector(0,0), [t1](Node* node))
+/*	Timer::StartTimer(3000, []())
 	{
-		node->SetContent)(t1)
+	CC::Lock();
+	std:.cout << "3 seconds Elapsed" << std::endl;
+	CC::unlock();
+	}	*/
+
+	Timer::StartLoopTimer(1000, []()
+	{
+		CC::Lock;
+		std::cout << "1 seconds elapsed" << std::endl;
+		CC::Unlock;
+
+		return true;
 	});
 
-	while (true)
-	{
-
-	}
+	std::cout << "End" << std::endl;
 }
 
-//---------------Codigo erroneo de como no hacerlo
 /*
-Node* node = new Node(Vector2(0, 0));
 
-Tree* tree = new Tree();
-Potatoe* potatoe = new Potatoe();
+-------------------INPUT SYSTEM TEST-------------------
 
-node->SetContent(tree);
-
-Tree* tree2 = node->GetContent() < Tree > ();
-Potatoe* potatoe2 = node->GetContent() < Potatoe > ();
-*/
-
-
-//-------------INPUT SYSTEM
-
-/*
 InputSystem* iS = new InputSystem();
 
 InputSystem::KeyBinding* kb = iS->AddListener(K_1, []()
@@ -81,14 +58,17 @@ InputSystem::KeyBinding* kb3 = iS->AddListener(K_3, []()
 
 
 iS->StartListen();
+
+
+while (true)
+{
+
+}
+
 */
 
-
-
-
-
 /*
-//----------------------------Clase de prueba de funciones lambda-----------------------------
+//------------------TEST Funciones Lambda---------------------
 	 //Función lambda
 typedef std::function<int(int, int)> SumaFunction;
 
