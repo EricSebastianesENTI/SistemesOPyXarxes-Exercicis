@@ -22,7 +22,7 @@ public:
 			});
 	}
 	virtual Json::Value Code() = 0;
-	virtual void Decode(Json::Value json); 
+	virtual void Decode(Json::Value json) = 0; 
 
 	template <typename T, typename = typename std::enable_if<std::is_base_of<ICodable, T>::value>::type>
 	static T* FromJson(Json::Value json)

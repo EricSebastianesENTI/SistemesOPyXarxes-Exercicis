@@ -9,6 +9,7 @@
 #include "3NodeMap/Nodemap.h"
 #include <json/json.h>
 #include <fstream>
+
 //typedef std::function<int(int, int)> SumaFunction;
 //typedef std::function<std::list<std::list<int>>> Test;
 //void TestLambdasMolonas(std::function<void()> funcionMolona)
@@ -47,6 +48,7 @@ public:
 		name = json["name"].asString();
 		coins = json["coins"].asUInt();
 	}
+	
 	Json::Value Encode() // Serializar
 	{
 		Json::Value json;

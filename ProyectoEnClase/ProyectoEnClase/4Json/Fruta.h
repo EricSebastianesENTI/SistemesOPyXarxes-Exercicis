@@ -1,11 +1,12 @@
 #pragma once
 #include <string>
-#include "Fruta.h"
+#include "ICodable.h"
 
-class Banana : public Fruta
+class Fruta : public ICodable
 {
 public:
-	int bananidad = 0;
+	unsigned int semillas = 0;
+	std::string hexDelColor = "";
 
 	Json::Value Code() override;
 
