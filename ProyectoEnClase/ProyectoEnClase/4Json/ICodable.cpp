@@ -5,7 +5,7 @@ std::string ICodable::DecodeKey()
     return "ICodableType";
 }
 
-void ICodable::SaveDeocdeprocess(std::string className, SubClassDecode decodeProcess)
+void ICodable::SaveDecodeprocess(std::string className, SubClassDecode decodeProcess)
 {
 	ICodable::GetDecodeMap()->emplace(className, decodeProcess);
 }

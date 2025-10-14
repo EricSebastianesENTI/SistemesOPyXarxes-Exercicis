@@ -10,6 +10,10 @@
 #include <json/json.h>
 #include <fstream>
 
+#include "4Json/ICodable.h"
+#include "4Json/Banana.h"
+#include "4Json/Manzana.h"
+
 //typedef std::function<int(int, int)> SumaFunction;
 //typedef std::function<std::list<std::list<int>>> Test;
 //void TestLambdasMolonas(std::function<void()> funcionMolona)
@@ -62,14 +66,58 @@ public:
 };
 int main()
 {
-	Player* player = new Player();
+	ICodable::SaveDecodeProcess<Banana>();
+	ICodable::SaveDecodeProcess<Manzana>();
+
+	std::vector<Fruta*> frutas
+	{
+		new Banana(),
+		new Manzana(),
+		new Banana()
+	};
+	frutas[1]->semillas = 10000;
+
+	Json::Value jsonArray = Json::Value(Json::arrayValue);
+
+	for(Fruta* fruta : frutas)
+	{
+		jsonArray.append(fruta->Code());
+	}
+
+	std::ofstream jsonWriteFile = std::ofstream("FrutasTest.json", std::ifstream::binary);
+
+	if (!jsonWriteFile.fail())
+	{
+		jsonWriteFile << jsonArray;
+		jsonWriteFile.close();
+	}
+
+	std::cout << "Finish write";
+
+	std::ifstream jsonReadFile = std::ifstream("FrutasTest.json", std::ifstream::binary);
+	std::vector<Fruta*> readFrutas;
+
+	if (!jsonReadFile.fail())
+	{
+		Json::Value readJson;
+
+		jsonReadFile >> readJson;
+
+		for (Json::Value value : readJson)
+		{
+			Fruta* f = ICodable::FromJson<Fruta>(value);
+			readFrutas.push_back(f);
+		}
+	}
+
+	/*Player* player = new Player();
 	player->coins = 69;
 	player->life = 67;
 	player->name = "Perro Sanxe";
 
 	Json::Value newJson;
 
-	newJson["Player"] = player->Encode();
+	newJson["Player"] = player->Encode();*/
 
 
 	/*Nodemap* mymap = new Nodemap(Vector2(20, 20), Vector2(2, 2));

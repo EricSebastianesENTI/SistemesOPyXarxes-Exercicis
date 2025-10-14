@@ -11,7 +11,7 @@ public:
 
 public:
 	static std::string DecodeKey();
-	static void SaveDeocdeprocess(std::string className, SubClassDecode decodeProcess);
+	static void SaveDecodeProcess(std::string className, SubClassDecode decodeProcess);
 
 	template <typename T, typename = typename std::enable_if<std::is_base_of<ICodable, T>::value>::type>
 	static void SaveDecodeProcess()
@@ -44,7 +44,11 @@ public:
 	
 
 protected:
-
+	template <typename T, typename = typename std::enable_if<std::is_base_of<ICodable, T>::value>::type>
+	void CodeSubClassType(Json::Value& json)
+	{
+		json[DecodeKey()] = typeid(T).name();
+	}
 
 
 private:
