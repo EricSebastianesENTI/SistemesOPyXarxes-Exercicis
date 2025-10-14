@@ -45,6 +45,15 @@
     <ClCompile Include="dist\jsoncpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="4Json\ICodable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="4Json\Banana.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="4Json\Manzana.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="1TutorialThread\Threadtutorial.h">
@@ -78,6 +87,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="dist\json\json-forwards.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="4Json\ICodable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="4Json\Banana.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="4Json\Manzana.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
